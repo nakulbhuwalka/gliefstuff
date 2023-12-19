@@ -506,28 +506,28 @@
 					<xs:documentation>The number of LEI data records in this file. Can be a positive whole (integer) number, or zero (0).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NextVersion" type="lei:HeaderNextVersionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>A structure for adding further elements in to the LEI data file header
-            in anticipation of a new version, by nesting a series of XML elements with this content
-            model within the <code>NextVersion</code> element, one for each new minor version of the
-            schema, postpending a serial number (1,2,3...) to the element name upon each
-            iteration.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>This lei:Extension element may contain any additional elements required
-            to extend the LEIHeader.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+<!--			<xs:element name="NextVersion" type="lei:HeaderNextVersionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>A structure for adding further elements in to the LEI data file header-->
+<!--            in anticipation of a new version, by nesting a series of XML elements with this content-->
+<!--            model within the <code>NextVersion</code> element, one for each new minor version of the-->
+<!--            schema, postpending a serial number (1,2,3...) to the element name upon each-->
+<!--            iteration.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
+<!--			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>This lei:Extension element may contain any additional elements required-->
+<!--            to extend the LEIHeader.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="HeaderNextVersionType">
-		<xs:sequence>
-			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+<!--	<xs:complexType name="HeaderNextVersionType">-->
+<!--		<xs:sequence>-->
+<!--			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--		</xs:sequence>-->
+<!--	</xs:complexType>-->
 	<xs:complexType name="LEIRecordsType">
 		<xs:sequence>
 			<xs:element name="LEIRecord" type="lei:LEIRecordType" minOccurs="0" maxOccurs="unbounded">
@@ -535,12 +535,12 @@
 					<xs:documentation>Contains LEI reference data including details of the LEI's registration with the <code>ManagingLOU</code>.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>This lei:Extension element may contain any additional elements required
-            to extend the LEIRecords container.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+<!--			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>This lei:Extension element may contain any additional elements required-->
+<!--            to extend the LEIRecords container.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="LEIRecordType">
@@ -564,28 +564,28 @@
             <code>ManagingLOU</code>.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NextVersion" type="lei:LEIRecordNextVersionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>A structure for adding further elements in to the LEI Data Record in
-            anticipation of a new version, by nesting a series of XML elements with this content
-            model within the <code>NextVersion</code> element, one for each new minor version of the
-            schema, postpending a serial number (1,2,3...) to the element name upon each
-            iteration.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>This lei:Extension element may contain any additional elements required
-            to extend the LEIRecord.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+<!--			<xs:element name="NextVersion" type="lei:LEIRecordNextVersionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>A structure for adding further elements in to the LEI Data Record in-->
+<!--            anticipation of a new version, by nesting a series of XML elements with this content-->
+<!--            model within the <code>NextVersion</code> element, one for each new minor version of the-->
+<!--            schema, postpending a serial number (1,2,3...) to the element name upon each-->
+<!--            iteration.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
+<!--			<xs:element name="Extension" type="lei:ExtensionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>This lei:Extension element may contain any additional elements required-->
+<!--            to extend the LEIRecord.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="LEIRecordNextVersionType">
-		<xs:sequence>
-			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+<!--	<xs:complexType name="LEIRecordNextVersionType">-->
+<!--		<xs:sequence>-->
+<!--			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--		</xs:sequence>-->
+<!--	</xs:complexType>-->
 	<xs:complexType name="EntityType">
 		<xs:sequence>
 			<xs:element name="LegalName" type="lei:NameType">
@@ -688,22 +688,22 @@
 					<xs:documentation>Container for a finite number of events specified by the ROC in the life of a legal entity that would impact the Reference Data in the Global LEI System.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NextVersion" type="lei:EntityNextVersionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>A structure for adding further elements in to the <code>Entity</code>
-            section of the LEI data record in anticipation of a new version, by nesting a series of
-            XML elements with this content model within the <code>NextVersion</code> element, one
-            for each new minor version of the schema, postpending a serial number (1,2,3...) to the
-            element name upon each iteration.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+<!--			<xs:element name="NextVersion" type="lei:EntityNextVersionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>A structure for adding further elements in to the <code>Entity</code>-->
+<!--            section of the LEI data record in anticipation of a new version, by nesting a series of-->
+<!--            XML elements with this content model within the <code>NextVersion</code> element, one-->
+<!--            for each new minor version of the schema, postpending a serial number (1,2,3...) to the-->
+<!--            element name upon each iteration.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="EntityNextVersionType">
-		<xs:sequence>
-			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+<!--	<xs:complexType name="EntityNextVersionType">-->
+<!--		<xs:sequence>-->
+<!--			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--		</xs:sequence>-->
+<!--	</xs:complexType>-->
 	<xs:complexType name="RegistrationType">
 		<xs:sequence>
 			<xs:element name="InitialRegistrationDate" type="lei:LEIDateTimeProfile">
@@ -751,28 +751,28 @@
             Issuer to validate the entity data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NextVersion" type="lei:RegistrationNextVersionType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>A structure for adding further elements in to the
-              <code>Registration</code> section of the LEI Data Record in anticipation of a new
-            version, by nesting a series of XML elements with this content model within the
-              <code>NextVersion</code> element, one for each new minor version of the schema,
-            postpending a serial number (1,2,3...) to the element name upon each
-            iteration.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+<!--			<xs:element name="NextVersion" type="lei:RegistrationNextVersionType" minOccurs="0">-->
+<!--				<xs:annotation>-->
+<!--					<xs:documentation>A structure for adding further elements in to the-->
+<!--              <code>Registration</code> section of the LEI Data Record in anticipation of a new-->
+<!--            version, by nesting a series of XML elements with this content model within the-->
+<!--              <code>NextVersion</code> element, one for each new minor version of the schema,-->
+<!--            postpending a serial number (1,2,3...) to the element name upon each-->
+<!--            iteration.</xs:documentation>-->
+<!--				</xs:annotation>-->
+<!--			</xs:element>-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="RegistrationNextVersionType">
-		<xs:sequence>
-			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ExtensionType">
-		<xs:sequence>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+<!--	<xs:complexType name="RegistrationNextVersionType">-->
+<!--		<xs:sequence>-->
+<!--			<xs:any namespace="##targetNamespace" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--		</xs:sequence>-->
+<!--	</xs:complexType>-->
+<!--	<xs:complexType name="ExtensionType">-->
+<!--		<xs:sequence>-->
+<!--			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--		</xs:sequence>-->
+<!--	</xs:complexType>-->
 	<xs:complexType name="AddressType">
 		<xs:sequence>
 			<xs:element name="FirstAddressLine" type="lei:Tokenized500Type">

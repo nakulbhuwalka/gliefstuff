@@ -64,6 +64,21 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>com.github.victools</groupId>
+				<artifactId>jsonschema-maven-plugin</artifactId>
+				<version>4.33.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<classNames>org.gleif.data.schema.leidata._2016.LEIRecordType</classNames>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
 				<version>3.1.0</version>
