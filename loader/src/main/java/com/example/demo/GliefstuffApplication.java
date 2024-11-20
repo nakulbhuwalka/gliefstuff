@@ -83,17 +83,20 @@ public class GliefstuffApplication implements ApplicationRunner {
 
         try(BufferedWriter writer= Files.newBufferedWriter(Paths.get(gleifFilePath+".json"))) {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonGenerator jsonGenerator= objectMapper.writerFor(LEIRecordType.class).createGenerator(writer);
+            //JsonGenerator jsonGenerator= objectMapper.writerFor(LEIRecordType.class).createGenerator(writer);
             dataParser.parse((LEIRecordType record) -> {
                 try {
-                    jsonGenerator.writeObject(record);
+                    writer.write(objectMapper.writeValueAsString(record));
+                    writer.write("\n");
+                   // jsonGenerator.writeObject(record);
+                   // jsonGenerator.writeString("\n");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
 
 
             });
-            jsonGenerator.close();
+            //jsonGenerator.close();
         }
 
     }
