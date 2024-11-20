@@ -15,6 +15,7 @@
 	<modules>
 		<module>loader</module>
 		<module>common-data</module>
+		<module>cache</module>
 	</modules>
 
 </project>

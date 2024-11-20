@@ -86,6 +86,7 @@ public class GliefstuffApplication implements ApplicationRunner {
             //JsonGenerator jsonGenerator= objectMapper.writerFor(LEIRecordType.class).createGenerator(writer);
             dataParser.parse((LEIRecordType record) -> {
                 try {
+
                     writer.write(objectMapper.writeValueAsString(record));
                     writer.write("\n");
                    // jsonGenerator.writeObject(record);
