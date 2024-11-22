@@ -16,6 +16,7 @@
 		<module>loader</module>
 		<module>common-data</module>
 		<module>cache</module>
-	</modules>
+        <module>cache-test</module>
+    </modules>
 
 </project>

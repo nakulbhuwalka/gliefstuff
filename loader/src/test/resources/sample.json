@@ -1,0 +1,75 @@
+{
+  "lei": "004L5FPTUREIWK9T2N63",
+  "entity": {
+    "legalName": {
+      "value": "Hutchin Hill Capital, LP",
+      "lang": "en"
+    },
+    "otherEntityNames": null,
+    "transliteratedOtherEntityNames": null,
+    "legalAddress": {
+      "firstAddressLine": "C/O Corporation Service Company",
+      "addressNumber": null,
+      "addressNumberWithinBuilding": null,
+      "mailRouting": null,
+      "additionalAddressLines": [
+        "2711 Centerville Road",
+        "Suite 400"
+      ],
+      "city": "Wilmington",
+      "region": "US-DE",
+      "country": "US",
+      "postalCode": "19808",
+      "lang": "en"
+    },
+    "headquartersAddress": {
+      "firstAddressLine": "22nd Floor",
+      "addressNumber": null,
+      "addressNumberWithinBuilding": null,
+      "mailRouting": null,
+      "additionalAddressLines": [
+        "888 7th Avenue"
+      ],
+      "city": "New York",
+      "region": "US-NY",
+      "country": "US",
+      "postalCode": "10106",
+      "lang": "en"
+    },
+    "otherAddresses": null,
+    "transliteratedOtherAddresses": null,
+    "registrationAuthority": {
+      "registrationAuthorityID": "RA000602",
+      "otherRegistrationAuthorityID": null,
+      "registrationAuthorityEntityID": "4386463"
+    },
+    "legalJurisdiction": "US-DE",
+    "entityCategory": "GENERAL",
+    "entitySubCategory": null,
+    "legalForm": {
+      "entityLegalFormCode": "T91T",
+      "otherLegalForm": null
+    },
+    "associatedEntity": null,
+    "entityStatus": "ACTIVE",
+    "entityCreationDate": null,
+    "entityExpirationDate": null,
+    "entityExpirationReason": null,
+    "successorEntities": [],
+    "legalEntityEvents": null
+  },
+  "registration": {
+    "initialRegistrationDate": 1338998160000,
+    "lastUpdateDate": 1691163101430,
+    "registrationStatus": "LAPSED",
+    "nextRenewalDate": 1525787160000,
+    "managingLOU": "5493001KJTIIGC8Y1R12",
+    "validationSources": "FULLY_CORROBORATED",
+    "validationAuthority": {
+      "validationAuthorityID": "RA000602",
+      "otherValidationAuthorityID": null,
+      "validationAuthorityEntityID": "4386463"
+    },
+    "otherValidationAuthorities": null
+  }
+}

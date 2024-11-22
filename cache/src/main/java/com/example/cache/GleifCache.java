@@ -34,8 +34,9 @@ public class GleifCache {
     public void postConstruct() throws IOException {
         log.info("Start Loading cache");
         Cache cache = cacheManager.getCache("gleif");
+        log.info("Cache Type {}",cache.getClass());
         ObjectMapper objectMapper = new ObjectMapper();
-        Files.lines(Path.of("/home/nakul/Downloads/20241114-0800-gleif-goldencopy-lei2-golden-copy.xml.json"))
+        Files.lines(Path.of("/home/nakul/Downloads/20240927-0800-gleif-goldencopy-lei2-golden-copy.xml.json"))
                 .forEach( line ->{
                     try {
                         LEIRecordType record = objectMapper.readValue(line, LEIRecordType.class);
