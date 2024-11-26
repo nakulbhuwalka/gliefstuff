@@ -8,8 +8,9 @@
 
 package org.w3._2001.xmlschema;
 
-import java.util.Date;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
+import java.util.Date;
 
 public class Adapter1
     extends XmlAdapter<String, Date>

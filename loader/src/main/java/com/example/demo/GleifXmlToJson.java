@@ -3,7 +3,6 @@ package com.example.demo;
 import com.example.demo.parser.XmlDataParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.xml.bind.JAXBException;
-import lombok.extern.slf4j.Slf4j;
 import org.gleif.data.schema.leidata._2016.LEIRecordType;
 
 import javax.xml.stream.XMLStreamException;
@@ -18,7 +17,7 @@ import java.nio.file.Paths;
 public class GleifXmlToJson {
 
     static final String COLLECTION = "lEIRecordType";
-    static String gleifFilePath="/home/nakul/Downloads/20241114-0800-gleif-goldencopy-lei2-golden-copy.xml1";
+    static String gleifFilePath="/home/nakul/Downloads/20241115-0000-gleif-goldencopy-lei2-golden-copy.xml";
     public static void main(String[] args) throws XMLStreamException, JAXBException, IOException {
 
         loadGelifData();
@@ -28,6 +27,7 @@ public class GleifXmlToJson {
         XmlDataParser dataParser = new XmlDataParser(gleifFilePath);
         try(BufferedWriter writer= Files.newBufferedWriter(Paths.get(gleifFilePath+".json"))) {
             ObjectMapper objectMapper = new ObjectMapper();
+
             dataParser.parse((LEIRecordType record) -> {
                 try {
                     writer.write(objectMapper.writeValueAsString(record));

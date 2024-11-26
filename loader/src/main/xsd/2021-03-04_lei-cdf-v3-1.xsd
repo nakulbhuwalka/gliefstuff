@@ -10,20 +10,20 @@
       unambiguously identify participants to financial transactions. The ISO 17442 Legal Entity
       Identifier (LEI) standard defines the following set of attributes as the most essential
       elements of identification: <ul>
-				<li>The name of the legal entity as recorded in an official register, or otherwise in the entity’s constituting documents.</li>
-				<li>Where applicable, the name of the official register in which the legal entity is registered and its identifier in that registry.</li>
-				<li>The legal form of the entity as represented in ISO 20275. </li>
+				<li>The name of the legal legalEntity as recorded in an official register, or otherwise in the legalEntity’s constituting documents.</li>
+				<li>Where applicable, the name of the official register in which the legal legalEntity is registered and its identifier in that registry.</li>
+				<li>The legal form of the legalEntity as represented in ISO 20275. </li>
 				<li>The address of legal formation, and the country in which it is located as represented in the ISO 3166 series.</li>
-				<li>The entity creation date, being the date on which the entity was first established, as represented in ISO 8601.</li>
-				<li>The address of the headquarters of the legal entity or the international branch.</li>
-				<li>The status of the legal entity regarding whether or not the entity is legally registered or otherwise constituted, and operating.</li>
+				<li>The legalEntity creation date, being the date on which the legalEntity was first established, as represented in ISO 8601.</li>
+				<li>The address of the headquarters of the legal legalEntity or the international branch.</li>
+				<li>The status of the legal legalEntity regarding whether or not the legalEntity is legally registered or otherwise constituted, and operating.</li>
 				<li>The status of the validation, publication and updating of the LEI and its supporting data record.</li>
 				<li>The date of the first LEI assignment, being the date of publication of the identifier and its supporting data record as represented in ISO 8601.</li>
 				<li>The date of last update of the LEI data record as represented in ISO 8601, and the reason for the update.</li>
-				<li>The effective date of a legal entity event, being the date on which the event was effective in the legal jurisdiction in which the entity is formed, as represented in ISO 8601.</li>
+				<li>The effective date of a legal legalEntity event, being the date on which the event was effective in the legal jurisdiction in which the legalEntity is formed, as represented in ISO 8601.</li>
 			</ul> The LEI Common Data File format (LEI-CDF) was proposed by the Legal Entity Identifier
       Regulatory Oversight Committee (ROC) as the additional standard necessary to support the
-      GLEIS in maintaining exclusive assignment of LEIs (one LEI per entity) and identifying,
+      GLEIS in maintaining exclusive assignment of LEIs (one LEI per legalEntity) and identifying,
       remediating data quality issues, and supporting use of the data. It is maintained and
       developed as a technical standard by the Global LEI Foundation (GLEIF) with the collaboration
       and oversight of the ROC. The LEI-CDF specifies in more detail: <ul>
@@ -421,12 +421,12 @@
       NOT be required to interpret the data content of any LEI Data Record; each LEI Data Record is
       self contained. <h3>LEI Data Record</h3> An LEI Data Record describes a single LEI
       registration. Each LEI Data record in a file conforming to this standard SHALL include data
-      elements as described below: <h4>LEI</h4> The ISO 17442-compliant LEI of the legal entity
+      elements as described below: <h4>LEI</h4> The ISO 17442-compliant LEI of the legal legalEntity
       described by this LEI Data Record. The LEI is assigned by the LOU.<br/>A value of type
         <code>LEIType</code> in a file conforming to this standard SHALL be a 20-character Legal
       Entity Identifier conforming to ISO 17422. Conformance to ISO17442 includes having correct
-      check digits. <h4>Entity</h4> Attributes describing the legal entity itself. The
-        <code>Entity</code> data is supplied by the legal entity, and recorded and published by the
+      check digits. <h4>Entity</h4> Attributes describing the legal legalEntity itself. The
+        <code>Entity</code> data is supplied by the legal legalEntity, and recorded and published by the
       LOU. <h4>Registration</h4> Attributes describing the registration of this LEI with an LOU. The
         <code>Registration</code> data is maintained by the LOU. <h4>Extension</h4> The optional
         <code>Extension</code> section of an LEI record may be used to include additional data not
@@ -547,20 +547,20 @@
 		<xs:sequence>
 			<xs:element name="LEI" type="lei:LEIType">
 				<xs:annotation>
-					<xs:documentation>The ISO 17442 compatible identifier for the legal entity described in
+					<xs:documentation>The ISO 17442 compatible identifier for the legal legalEntity described in
             the <code>Entity</code> section.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Entity" type="lei:EntityType">
 				<xs:annotation>
-					<xs:documentation>The Entity container element contains the legal entity's reference data,
+					<xs:documentation>The Entity container element contains the legal legalEntity's reference data,
             enabling identification.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Registration" type="lei:RegistrationType">
 				<xs:annotation>
 					<xs:documentation>The <code>Registration</code> container element contains all information
-            on the legal entity's LEI registration with the
+            on the legal legalEntity's LEI registration with the
             <code>ManagingLOU</code>.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -590,57 +590,57 @@
 		<xs:sequence>
 			<xs:element name="LegalName" type="lei:NameType">
 				<xs:annotation>
-					<xs:documentation>The legal name of the legal entity.</xs:documentation>
+					<xs:documentation>The legal name of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OtherEntityNames" type="lei:OtherEntityNamesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>An optional list of other names (excluding transliterations) for the
-            legal entity.</xs:documentation>
+            legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TransliteratedOtherEntityNames" type="lei:TransliteratedOtherEntityNamesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>An optional list of ASCII-transliterated (i.e. Latin- or Romanized)
-            representations of names for the legal entity.</xs:documentation>
+            representations of names for the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="LegalAddress" type="lei:AddressType">
 				<xs:annotation>
-					<xs:documentation>The address of the legal entity as recorded in the registration of the legal entity in its legal jurisdiction.</xs:documentation>
+					<xs:documentation>The address of the legal legalEntity as recorded in the registration of the legal legalEntity in its legal jurisdiction.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="HeadquartersAddress" type="lei:AddressType">
 				<xs:annotation>
-					<xs:documentation>The address of the headquarters of the legal entity.</xs:documentation>
+					<xs:documentation>The address of the headquarters of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OtherAddresses" type="lei:OtherAddressesType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>An optional list of other addresses for the legal entity, excluding
+					<xs:documentation>An optional list of other addresses for the legal legalEntity, excluding
             transliterations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TransliteratedOtherAddresses" type="lei:TransliteratedOtherAddressesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>An optional list of transliterated addresses for the legal
-            entity.</xs:documentation>
+            legalEntity.</xs:documentation>
 					<xs:documentation> </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RegistrationAuthority" type="lei:RegistrationAuthorityType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Information about the official authority in the legal entity's jurisdiction of legal registration, for example a business registry, and the corresponding identification of the legal entity by that official source.</xs:documentation>
+					<xs:documentation>Information about the official authority in the legal legalEntity's jurisdiction of legal registration, for example a business registry, and the corresponding identification of the legal legalEntity by that official source.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="LegalJurisdiction" type="lei:JurisdictionCodeType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The jurisdiction of legal formation of the legal entity; i.e. where the LegalForm of the legal entity originates.</xs:documentation>
+					<xs:documentation>The jurisdiction of legal formation of the legal legalEntity; i.e. where the LegalForm of the legal legalEntity originates.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntityCategory" type="lei:EntityCategoryTypeEnum" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Indicates (where applicable) the category of legal entity identified by this LEI data record, as a more specific category within the broad definition given in ISO 17442. These categories are based on use cases specified in ROC policies, found at https://www.leiroc.org/leiroc_gls/index.htm.</xs:documentation>
+					<xs:documentation>Indicates (where applicable) the category of legal legalEntity identified by this LEI data record, as a more specific category within the broad definition given in ISO 17442. These categories are based on use cases specified in ROC policies, found at https://www.leiroc.org/leiroc_gls/index.htm.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntitySubCategory" type="lei:EntitySubCategoryTypeEnum" minOccurs="0">
@@ -650,32 +650,32 @@
 			</xs:element>
 			<xs:element name="LegalForm" type="lei:LegalFormType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The legal form of the legal entity.</xs:documentation>
+					<xs:documentation>The legal form of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AssociatedEntity" type="lei:AssociatedEntityType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Another entity associated with this entity if needed to fully identify this entity or to place it in an appropriate context. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
+					<xs:documentation>Another legalEntity associated with this legalEntity if needed to fully identify this legalEntity or to place it in an appropriate context. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntityStatus" type="lei:EntityStatusEnum">
 				<xs:annotation>
-					<xs:documentation>The operational and/or legal registration status of the legal entity (may be <code>ACTIVE</code>, <code>INACTIVE</code> or <code>NULL</code>).</xs:documentation>
+					<xs:documentation>The operational and/or legal registration status of the legal legalEntity (may be <code>ACTIVE</code>, <code>INACTIVE</code> or <code>NULL</code>).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntityCreationDate" type="lei:LEIDateTimeProfileGeYear0001" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The date on which the legal entity was first established, as represented by ISO 8601 (as defined in ISO 17442).</xs:documentation>
+					<xs:documentation>The date on which the legal legalEntity was first established, as represented by ISO 8601 (as defined in ISO 17442).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntityExpirationDate" type="lei:LEIDateTimeProfile" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The date that the legal entity ceased to operate, whether due to dissolution, merger or acquisition. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
+					<xs:documentation>The date that the legal legalEntity ceased to operate, whether due to dissolution, merger or acquisition. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="EntityExpirationReason" type="lei:EntityExpirationReasonEnum" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The reason that a legal entity ceased to exist and/or operate. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
+					<xs:documentation>The reason that a legal legalEntity ceased to exist and/or operate. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SuccessorEntity" type="lei:SuccessorEntityType" minOccurs="0" maxOccurs="unbounded">
@@ -685,7 +685,7 @@
 			</xs:element>
 			<xs:element name="LegalEntityEvents" type="lei:LegalEntityEventsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Container for a finite number of events specified by the ROC in the life of a legal entity that would impact the Reference Data in the Global LEI System.</xs:documentation>
+					<xs:documentation>Container for a finite number of events specified by the ROC in the life of a legal legalEntity that would impact the Reference Data in the Global LEI System.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 <!--			<xs:element name="NextVersion" type="lei:EntityNextVersionType" minOccurs="0">-->
@@ -718,14 +718,14 @@
 			</xs:element>
 			<xs:element name="RegistrationStatus" type="lei:RegistrationStatusEnum">
 				<xs:annotation>
-					<xs:documentation>The status of the legal entity's LEI registration with the
+					<xs:documentation>The status of the legal legalEntity's LEI registration with the
               <code>ManagingLOU</code>.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="NextRenewalDate" type="lei:LEIDateTimeProfile">
 				<xs:annotation>
 					<xs:documentation>The next date by which the LEI registration should be renewed and
-            re-certified by the legal entity.</xs:documentation>
+            re-certified by the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ManagingLOU" type="lei:LEIType">
@@ -742,13 +742,13 @@
 			</xs:element>
 			<xs:element name="ValidationAuthority" type="lei:ValidationAuthorityType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Information about the (primary) official authority in the legal entity's jurisdiction of legal registration, for example a business registry, and the corresponding identification of the legal entity by that official source used to validate the legal entity reference data.</xs:documentation>
+					<xs:documentation>Information about the (primary) official authority in the legal legalEntity's jurisdiction of legal registration, for example a business registry, and the corresponding identification of the legal legalEntity by that official source used to validate the legal legalEntity reference data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OtherValidationAuthorities" type="lei:OtherValidationAuthoritiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>An optional list of additional registration authorities used by the LEI
-            Issuer to validate the entity data.</xs:documentation>
+            Issuer to validate the legalEntity data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 <!--			<xs:element name="NextVersion" type="lei:RegistrationNextVersionType" minOccurs="0">-->
@@ -912,13 +912,13 @@
 		<xs:choice>
 			<xs:element name="AssociatedLEI" type="lei:LEIType">
 				<xs:annotation>
-					<xs:documentation>The LEI of an entity associated with the LEI of this
+					<xs:documentation>The LEI of an legalEntity associated with the LEI of this
 registration.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AssociatedEntityName" type="lei:NameType">
 				<xs:annotation>
-					<xs:documentation>The name of an entity associated with the LEI of this
+					<xs:documentation>The name of an legalEntity associated with the LEI of this
             registration.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -944,7 +944,7 @@ registration.</xs:documentation>
 			</xs:element>
 			<xs:element name="RegistrationAuthorityEntityID" type="lei:Tokenized500Type" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The identifier of the entity at the indicated registration authority.</xs:documentation>
+					<xs:documentation>The identifier of the legalEntity at the indicated registration authority.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -954,7 +954,7 @@ registration.</xs:documentation>
 			<xs:element name="OtherValidationAuthority" type="lei:ValidationAuthorityType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>An additional registration authority used by the LOU to validate the
-            entity data.</xs:documentation>
+            legalEntity data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -973,7 +973,7 @@ registration.</xs:documentation>
 			</xs:element>
 			<xs:element name="ValidationAuthorityEntityID" type="lei:Tokenized500Type" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The identifier of the entity at the indicated registration authority.</xs:documentation>
+					<xs:documentation>The identifier of the legalEntity at the indicated registration authority.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -997,7 +997,7 @@ registration.</xs:documentation>
 		<xs:sequence>
 			<xs:element name="OtherAddress" type="lei:OtherAddressType" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>An alternative address for the legal entity excluding transliterations.
+					<xs:documentation>An alternative address for the legal legalEntity excluding transliterations.
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1007,7 +1007,7 @@ registration.</xs:documentation>
 		<xs:sequence>
 			<xs:element name="TransliteratedOtherAddress" type="lei:TransliteratedOtherAddressType" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A transliterated version of one of the addresses for the legal entity.
+					<xs:documentation>A transliterated version of one of the addresses for the legal legalEntity.
           </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1018,7 +1018,7 @@ registration.</xs:documentation>
 			<xs:extension base="lei:TransliteratedAddressType">
 				<xs:attribute name="type" type="lei:TransliteratedAddressTypeEnum" use="required">
 					<xs:annotation>
-						<xs:documentation>Type of alternative name for the legal entity.</xs:documentation>
+						<xs:documentation>Type of alternative name for the legal legalEntity.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1028,7 +1028,7 @@ registration.</xs:documentation>
 		<xs:sequence>
 			<xs:element name="OtherEntityName" type="lei:OtherEntityNameType" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>An alternative name or representation of a name for the legal entity,
+					<xs:documentation>An alternative name or representation of a name for the legal legalEntity,
             excluding transliterations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1044,7 +1044,7 @@ registration.</xs:documentation>
 			<xs:extension base="lei:NameType">
 				<xs:attribute name="type" type="lei:EntityNameTypeEnum" use="required">
 					<xs:annotation>
-						<xs:documentation>Type of alternative name for the legal entity.</xs:documentation>
+						<xs:documentation>Type of alternative name for the legal legalEntity.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1054,12 +1054,12 @@ registration.</xs:documentation>
 		<xs:choice>
 			<xs:element name="SuccessorLEI" type="lei:LEIType">
 				<xs:annotation>
-					<xs:documentation>The LEI of the successor entity. </xs:documentation>
+					<xs:documentation>The LEI of the successor legalEntity. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SuccessorEntityName" type="lei:NameType">
 				<xs:annotation>
-					<xs:documentation>The name of the successor entity. </xs:documentation>
+					<xs:documentation>The name of the successor legalEntity. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -1170,33 +1170,33 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="GENERAL">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a general legal entity.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a general legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="BRANCH">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a branch of another legal entity.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a branch of another legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="FUND">
 				<xs:annotation>
-					<xs:documentation>The legal entity is an investment fund defined as a collective investment scheme (or pooled investment) beneficially owned by multiple investors and managed on behalf of those investors by an asset manager or by the fund itself.</xs:documentation>
+					<xs:documentation>The legal legalEntity is an investment fund defined as a collective investment scheme (or pooled investment) beneficially owned by multiple investors and managed on behalf of those investors by an asset manager or by the fund itself.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SOLE_PROPRIETOR">
 				<xs:annotation>
-					<xs:documentation>The legal entity is an individual acting in a business
+					<xs:documentation>The legal legalEntity is an individual acting in a business
             capacity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="RESIDENT_GOVERNMENT_ENTITY">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a non-market producer, part of a central, state or local government, social security funds or a non-profit institution (NPI) controlled by government units.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a non-market producer, part of a central, state or local government, social security funds or a non-profit institution (NPI) controlled by government units.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="INTERNATIONAL_ORGANIZATION">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a non-resident unit created by international agreements or other arrangements for the provision of non-market services or financial intermediation at the international level.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a non-resident unit created by international agreements or other arrangements for the provision of non-market services or financial intermediation at the international level.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -1205,22 +1205,22 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="CENTRAL_GOVERNMENT">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a central government subsector which consists of the institutional units plus non-profit institution (NPI) controlled by the central government institutions.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a central government subsector which consists of the institutional units plus non-profit institution (NPI) controlled by the central government institutions.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="STATE_GOVERNMENT">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a state government subsector which consists of the institutional units that exercise some government functions at a level below that of the central government and above that of the government institutional units existing at a local level.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a state government subsector which consists of the institutional units that exercise some government functions at a level below that of the central government and above that of the government institutional units existing at a local level.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="LOCAL_GOVERNMENT">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a local government subsector which consists of local governments that are separate institutional units.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a local government subsector which consists of local governments that are separate institutional units.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SOCIAL_SECURITY">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a social security scheme which covers a wide variety of programmes, providing benefits in cash or in kind for old age, invalidity or death, survivors, sickness and maternity, work injury, unemployment, family allowance, health care, etc.</xs:documentation>
+					<xs:documentation>The legal legalEntity is a social security scheme which covers a wide variety of programmes, providing benefits in cash or in kind for old age, invalidity or death, survivors, sickness and maternity, work injury, unemployment, family allowance, health care, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -1236,7 +1236,7 @@ registration.</xs:documentation>
 			</xs:element>
 			<xs:element name="OtherLegalForm" type="lei:Tokenized500Type" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>A legacy code or textual description for the legal entity's legal form,
+					<xs:documentation>A legacy code or textual description for the legal legalEntity's legal form,
             used until a current code from the GLEIF-maintained list can be used.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -1259,19 +1259,19 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ALTERNATIVE_LANGUAGE_LEGAL_NAME">
 				<xs:annotation>
-					<xs:documentation>Registered name of the entity in an alternative language in the legal
-            jurisdiction in which the entity is registered.</xs:documentation>
+					<xs:documentation>Registered name of the legalEntity in an alternative language in the legal
+            jurisdiction in which the legalEntity is registered.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PREVIOUS_LEGAL_NAME">
 				<xs:annotation>
-					<xs:documentation>A primary legal name previously used by this entity.</xs:documentation>
+					<xs:documentation>A primary legal name previously used by this legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="TRADING_OR_OPERATING_NAME">
 				<xs:annotation>
 					<xs:documentation>A "trading as", "brand name" or "operating under" name currently used by
-            this entity in addition to, but not replacing, the (primary) legal, official registered
+            this legalEntity in addition to, but not replacing, the (primary) legal, official registered
             name.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
@@ -1281,13 +1281,13 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ALTERNATIVE_LANGUAGE_LEGAL_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Registered address of the entity in the legal jurisdiction, in an
+					<xs:documentation>Registered address of the legalEntity in the legal jurisdiction, in an
             alternative language used in the legal jurisdiction.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ALTERNATIVE_LANGUAGE_HEADQUARTERS_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Address of the headquarters of the entity, in an alternative language
+					<xs:documentation>Address of the headquarters of the legalEntity, in an alternative language
             used in the legal jurisdiction.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
@@ -1297,28 +1297,28 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="AUTO_ASCII_TRANSLITERATED_LEGAL_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Registered address of the entity in the legal jurisdiction,
+					<xs:documentation>Registered address of the legalEntity in the legal jurisdiction,
             transliterated to ASCII characters, auto-transliterated by the managing
             LOU.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="AUTO_ASCII_TRANSLITERATED_HEADQUARTERS_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Address of the headquarters of the entity, transliterated to ASCII
+					<xs:documentation>Address of the headquarters of the legalEntity, transliterated to ASCII
             characters, auto-transliterated by the managing LOU.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PREFERRED_ASCII_TRANSLITERATED_LEGAL_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Registered address of the entity in the legal jurisdiction,
-            transliterated to ASCII characters, provided by the entity for this
+					<xs:documentation>Registered address of the legalEntity in the legal jurisdiction,
+            transliterated to ASCII characters, provided by the legalEntity for this
             purpose.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PREFERRED_ASCII_TRANSLITERATED_HEADQUARTERS_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Address of the headquarters of the entity, transliterated to ASCII
-            characters, provided by the entity for this purpose.</xs:documentation>
+					<xs:documentation>Address of the headquarters of the legalEntity, transliterated to ASCII
+            characters, provided by the legalEntity for this purpose.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -1327,7 +1327,7 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="FUND_FAMILY">
 				<xs:annotation>
-					<xs:documentation>The legal entity is a fund, and the associated entity is the manager of
+					<xs:documentation>The legal legalEntity is a fund, and the associated legalEntity is the manager of
             the fund. </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
@@ -1337,18 +1337,18 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ACTIVE">
 				<xs:annotation>
-					<xs:documentation>As of the last report or update, the legal entity reported that it was
+					<xs:documentation>As of the last report or update, the legal legalEntity reported that it was
             legally registered and operating. </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="INACTIVE">
 				<xs:annotation>
-					<xs:documentation>It has been determined that the entity that was assigned the LEI is no longer legally registered and/or operating, as indicated by a legal entity event Reason.</xs:documentation>
+					<xs:documentation>It has been determined that the legalEntity that was assigned the LEI is no longer legally registered and/or operating, as indicated by a legal legalEntity event Reason.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="NULL">
 				<xs:annotation>
-					<xs:documentation>The entity status is not applicable.</xs:documentation>
+					<xs:documentation>The legalEntity status is not applicable.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -1357,12 +1357,12 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="DISSOLVED">
 				<xs:annotation>
-					<xs:documentation>The entity ceased to operate. </xs:documentation>
+					<xs:documentation>The legalEntity ceased to operate. </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CORPORATE_ACTION">
 				<xs:annotation>
-					<xs:documentation>The entity was acquired or merged with another entity.
+					<xs:documentation>The legalEntity was acquired or merged with another legalEntity.
           </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
@@ -1385,30 +1385,30 @@ registration.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="ISSUED">
 				<xs:annotation>
-					<xs:documentation>An LEI Registration that has been validated and issued, and which identifies an entity having a legal entity status of ACTIVE as of the Date of First LEI Assignment or the Date of Last Update of the LEI Data Record.</xs:documentation>
+					<xs:documentation>An LEI Registration that has been validated and issued, and which identifies an legalEntity having a legal legalEntity status of ACTIVE as of the Date of First LEI Assignment or the Date of Last Update of the LEI Data Record.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="DUPLICATE">
 				<xs:annotation>
 					<xs:documentation>An LEI Registration that has been determined to be a duplicate
-            registration of the same legal entity as another LEI Registration; the DUPLICATE status
+            registration of the same legal legalEntity as another LEI Registration; the DUPLICATE status
             is assigned to the non-surviving registration (i.e. the LEI that should no longer be
             used).</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="LAPSED">
 				<xs:annotation>
-					<xs:documentation>An LEI registration that has not been renewed by the <code>NextRenewalDate</code> and is not known by public sources to have a legal entity status of INACTIVE.</xs:documentation>
+					<xs:documentation>An LEI registration that has not been renewed by the <code>NextRenewalDate</code> and is not known by public sources to have a legal legalEntity status of INACTIVE.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MERGED">
 				<xs:annotation>
-					<xs:documentation>An LEI registration for an entity that has been merged into another legal entity, such that this legal entity no longer exists as an operating entity. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
+					<xs:documentation>An LEI registration for an legalEntity that has been merged into another legal legalEntity, such that this legal legalEntity no longer exists as an operating legalEntity. (Deprecated as of LEI-CDF 3.0)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="RETIRED">
 				<xs:annotation>
-					<xs:documentation>An LEI registration status for an entity that has been affected by certain legal entity events.</xs:documentation>
+					<xs:documentation>An LEI registration status for an legalEntity that has been affected by certain legal legalEntity events.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ANNULLED">
@@ -1868,7 +1868,7 @@ registration.</xs:documentation>
 			<xs:extension base="lei:TransliteratedNameType">
 				<xs:attribute name="type" type="lei:TransliteratedEntityNameTypeEnum" use="required">
 					<xs:annotation>
-						<xs:documentation>Type of alternative name for the legal entity.</xs:documentation>
+						<xs:documentation>Type of alternative name for the legal legalEntity.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -1878,13 +1878,13 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="PREFERRED_ASCII_TRANSLITERATED_LEGAL_NAME">
 				<xs:annotation>
-					<xs:documentation>Legal name of the entity transliterated to ASCII characters, provided by
-            the entity for this purpose.</xs:documentation>
+					<xs:documentation>Legal name of the legalEntity transliterated to ASCII characters, provided by
+            the legalEntity for this purpose.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="AUTO_ASCII_TRANSLITERATED_LEGAL_NAME">
 				<xs:annotation>
-					<xs:documentation>Legal name of the entity transliterated to ASCII characters,
+					<xs:documentation>Legal name of the legalEntity transliterated to ASCII characters,
             auto-transliterated by the managing LOU.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
@@ -1966,7 +1966,7 @@ registration.</xs:documentation>
 		<xs:sequence minOccurs="1">
 			<xs:element name="LegalEntityEvent" type="lei:LegalEntityEventContainerType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Container for a single event specified by the ROC in the life of a legal entity that would impact the Reference Data in the Global LEI System.</xs:documentation>
+					<xs:documentation>Container for a single event specified by the ROC in the life of a legal legalEntity that would impact the Reference Data in the Global LEI System.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1975,53 +1975,53 @@ registration.</xs:documentation>
 		<xs:sequence>
 			<xs:element name="LegalEntityEventType" type="lei:LegalEntityEventTypeEnum">
 				<xs:annotation>
-					<xs:documentation>The type of legal entity event.</xs:documentation>
+					<xs:documentation>The type of legal legalEntity event.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="LegalEntityEventEffectiveDate" type="lei:LEIDateTimeProfileGeYear0001" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The date when the legal entity event becomes legally effective.</xs:documentation>
+					<xs:documentation>The date when the legal legalEntity event becomes legally effective.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="LegalEntityEventRecordedDate" type="lei:LEIDateTimeProfileGeYear2000">
 				<xs:annotation>
-					<xs:documentation>The date when the legal entity event was recorded in the Global LEI System.</xs:documentation>
+					<xs:documentation>The date when the legal legalEntity event was recorded in the Global LEI System.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ValidationDocuments" type="lei:ValidationDocumentsTypeEnum">
 				<xs:annotation>
-					<xs:documentation>Type of source document(s) used for validating the legal entity event.</xs:documentation>
+					<xs:documentation>Type of source document(s) used for validating the legal legalEntity event.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ValidationReference" type="lei:Tokenized500Type" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>A reference to a specific document or other source used as the basis of validation for this legal entity event.</xs:documentation>
+					<xs:documentation>A reference to a specific document or other source used as the basis of validation for this legal legalEntity event.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AffectedFields" type="lei:AffectedFieldsType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>A list of LEI Record Set elements that are expected to be updated in the LEI Record Set as a result of a legal entity event.</xs:documentation>
+					<xs:documentation>A list of LEI Record Set elements that are expected to be updated in the LEI Record Set as a result of a legal legalEntity event.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="group_type" type="lei:LegalEntityEventGroupTypeEnum" use="required">
 			<xs:annotation>
-				<xs:documentation>Describes whether or not this legal entity event is part of a group of multiple or a complex event.</xs:documentation>
+				<xs:documentation>Describes whether or not this legal legalEntity event is part of a group of multiple or a complex event.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="event_status" type="lei:LegalEntityEventStatusEnum" use="required">
 			<xs:annotation>
-				<xs:documentation>Describes the status of the legal entity event with regard to event timeline.</xs:documentation>
+				<xs:documentation>Describes the status of the legal legalEntity event with regard to event timeline.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="group_id" type="lei:Tokenized500Type" use="optional">
 			<xs:annotation>
-				<xs:documentation>An identifier assigned to link legal entity events that are part of the same group of multiple or a complex event.</xs:documentation>
+				<xs:documentation>An identifier assigned to link legal legalEntity events that are part of the same group of multiple or a complex event.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="group_sequence_no" type="xs:positiveInteger" use="optional">
 			<xs:annotation>
-				<xs:documentation>A number which indicates the sequence of each legal entity event within a group of events.</xs:documentation>
+				<xs:documentation>A number which indicates the sequence of each legal legalEntity event within a group of events.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -2029,14 +2029,14 @@ registration.</xs:documentation>
 		<xs:sequence>
 			<xs:element name="AffectedField" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A single element and its value that is expected to be updated in the LEI Record Set as a result of a legal entity event.</xs:documentation>
+					<xs:documentation>A single element and its value that is expected to be updated in the LEI Record Set as a result of a legal legalEntity event.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="lei:Tokenized500Type">
 							<xs:attribute name="field_xpath" type="lei:Tokenized500Type" use="required">
 								<xs:annotation>
-									<xs:documentation>The full xpath to a single element that is expected to be updated in the LEI Record Set as a result of a legal entity event.</xs:documentation>
+									<xs:documentation>The full xpath to a single element that is expected to be updated in the LEI Record Set as a result of a legal legalEntity event.</xs:documentation>
 								</xs:annotation>
 							</xs:attribute>
 						</xs:extension>
@@ -2049,37 +2049,37 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="CHANGE_LEGAL_NAME">
 				<xs:annotation>
-					<xs:documentation>Change in the legal name of the legal entity.</xs:documentation>
+					<xs:documentation>Change in the legal name of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CHANGE_OTHER_NAMES">
 				<xs:annotation>
-					<xs:documentation>Change in the trade- or doing business name of the legal entity.</xs:documentation>
+					<xs:documentation>Change in the trade- or doing business name of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CHANGE_LEGAL_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Change in the legal address of the legal entity.</xs:documentation>
+					<xs:documentation>Change in the legal address of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CHANGE_HQ_ADDRESS">
 				<xs:annotation>
-					<xs:documentation>Change in the headquarters address of the legal entity.</xs:documentation>
+					<xs:documentation>Change in the headquarters address of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CHANGE_LEGAL_FORM">
 				<xs:annotation>
-					<xs:documentation>Change in the legal form of the legal entity.</xs:documentation>
+					<xs:documentation>Change in the legal form of the legal legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="DEMERGER">
 				<xs:annotation>
-					<xs:documentation>Distribution of securities issued by another legal entity. The distributed securities may either be of a newly created or of an existing legal entity. For example, spin-off, demerger, unbundling, divestment.</xs:documentation>
+					<xs:documentation>Distribution of securities issued by another legal legalEntity. The distributed securities may either be of a newly created or of an existing legal legalEntity. For example, spin-off, demerger, unbundling, divestment.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SPINOFF">
 				<xs:annotation>
-					<xs:documentation>A special case of demerger where the shareholders of the original entity are compensated for the value loss of the original entity via shares of the new entity or via dividend.</xs:documentation>
+					<xs:documentation>A special case of demerger where the shareholders of the original legalEntity are compensated for the value loss of the original legalEntity via shares of the new legalEntity or via dividend.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ABSORPTION">
@@ -2089,22 +2089,22 @@ registration.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="ACQUISITION_BRANCH">
 				<xs:annotation>
-					<xs:documentation>The acquiring legal entity purchases an international branch entity.</xs:documentation>
+					<xs:documentation>The acquiring legal legalEntity purchases an international branch legalEntity.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="TRANSFORMATION_BRANCH_TO_SUBSIDIARY">
 				<xs:annotation>
-					<xs:documentation>The transfer of all of the assets and liabilities of an International Branch to the new subsidiary entity in exchange for the transfer of securities representing the capital of the subsidiary entity receiving the transfer.</xs:documentation>
+					<xs:documentation>The transfer of all of the assets and liabilities of an International Branch to the new subsidiary legalEntity in exchange for the transfer of securities representing the capital of the subsidiary legalEntity receiving the transfer.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="TRANSFORMATION_SUBSIDIARY_TO_BRANCH">
 				<xs:annotation>
-					<xs:documentation>The transfer of all of the assets and liabilities of a subsidiary to an International Branch entity in exchange for the transfer of securities representing the capital of the International Branch entity receiving the transfer.</xs:documentation>
+					<xs:documentation>The transfer of all of the assets and liabilities of a subsidiary to an International Branch legalEntity in exchange for the transfer of securities representing the capital of the International Branch legalEntity receiving the transfer.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="TRANSFORMATION_UMBRELLA_TO_STANDALONE">
 				<xs:annotation>
-					<xs:documentation>Change in legal form from a Fund legal entity structure with one or more than one sub-funds/compartments to a Fund legal entity structure without sub-funds/compartments.</xs:documentation>
+					<xs:documentation>Change in legal form from a Fund legal legalEntity structure with one or more than one sub-funds/compartments to a Fund legal legalEntity structure without sub-funds/compartments.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="BREAKUP">
@@ -2119,17 +2119,17 @@ registration.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="BANKRUPTCY">
 				<xs:annotation>
-					<xs:documentation>Legal status of a legal entity unable to pay creditors. Bankruptcy usually involves a formal court ruling. Securities may become valueless (event completed).</xs:documentation>
+					<xs:documentation>Legal status of a legal legalEntity unable to pay creditors. Bankruptcy usually involves a formal court ruling. Securities may become valueless (event completed).</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="LIQUIDATION">
 				<xs:annotation>
-					<xs:documentation>Distribution of cash, assets or both of a legal entity. Debt may be paid in order of priority based on preferred claims to assets specified by the security (event completed).</xs:documentation>
+					<xs:documentation>Distribution of cash, assets or both of a legal legalEntity. Debt may be paid in order of priority based on preferred claims to assets specified by the security (event completed).</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="VOLUNTARY_ARRANGEMENT">
 				<xs:annotation>
-					<xs:documentation>A procedure that allows a legal entity to settle debts by paying only a proportion of the amount that it owes to creditors or to come to some other arrangement with its creditors over the payment of its debts (event completed).</xs:documentation>
+					<xs:documentation>A procedure that allows a legal legalEntity to settle debts by paying only a proportion of the amount that it owes to creditors or to come to some other arrangement with its creditors over the payment of its debts (event completed).</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="INSOLVENCY">
@@ -2139,7 +2139,7 @@ registration.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="DISSOLUTION">
 				<xs:annotation>
-					<xs:documentation>(i) A voluntary termination of operations, (ii) a general assignment for the benefit of the legal entity’s creditors or (iii) any other liquidation, dissolution or winding up of the legal entity (excluding a Liquidity Event), whether voluntary or involuntary (event completed).</xs:documentation>
+					<xs:documentation>(i) A voluntary termination of operations, (ii) a general assignment for the benefit of the legal legalEntity’s creditors or (iii) any other liquidation, dissolution or winding up of the legal legalEntity (excluding a Liquidity Event), whether voluntary or involuntary (event completed).</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -2183,17 +2183,17 @@ registration.</xs:documentation>
 			</xs:enumeration>
 			<xs:enumeration value="STANDALONE">
 				<xs:annotation>
-					<xs:documentation>Single / standalone legal entity event with no combination of multiple events.</xs:documentation>
+					<xs:documentation>Single / standalone legal legalEntity event with no combination of multiple events.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CHANGE_LEGAL_FORM_AND_NAME">
 				<xs:annotation>
-					<xs:documentation>legal entity event including change of the legal name triggered by change of the legal form.</xs:documentation>
+					<xs:documentation>legal legalEntity event including change of the legal name triggered by change of the legal form.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="COMPLEX_CHANGE_LEGAL_FORM">
 				<xs:annotation>
-					<xs:documentation>legal entity event including change of the legal entity status triggered by change of the legal form.</xs:documentation>
+					<xs:documentation>legal legalEntity event including change of the legal legalEntity status triggered by change of the legal form.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -2202,17 +2202,17 @@ registration.</xs:documentation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="IN_PROGRESS">
 				<xs:annotation>
-					<xs:documentation>The legal entity event activity and processing is in progress.</xs:documentation>
+					<xs:documentation>The legal legalEntity event activity and processing is in progress.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="WITHDRAWN_CANCELLED">
 				<xs:annotation>
-					<xs:documentation>The legal entity event as announced will not occur.</xs:documentation>
+					<xs:documentation>The legal legalEntity event as announced will not occur.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="COMPLETED">
 				<xs:annotation>
-					<xs:documentation>The legal entity event activity and processing have been completed as of the LegalEntityEventEffectiveDate.</xs:documentation>
+					<xs:documentation>The legal legalEntity event activity and processing have been completed as of the LegalEntityEventEffectiveDate.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>

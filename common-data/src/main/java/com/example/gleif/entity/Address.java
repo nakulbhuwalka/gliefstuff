@@ -1,11 +1,15 @@
 package com.example.gleif.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
 
-    private long id;
     private String firstAddressLine;
     private String addressNumber;
     private String addressNumberWithinBuilding;
@@ -15,6 +19,9 @@ public class Address {
     private String country;
     private String postalCode;
     private String type;
+    @ManyToOne
+    @JoinColumn(name="legal_entity_id", nullable=false)
+    private LegalEntity legalEntity;
     
 
 }

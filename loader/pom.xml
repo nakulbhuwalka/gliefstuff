@@ -4,12 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.example</groupId>
+		<artifactId>gliefstuff</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.example</groupId>
 	<artifactId>gliefstuff-loader</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>Demo project for Spring Boot : Gleif</description>
@@ -22,8 +20,6 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -34,68 +30,6 @@
 			<artifactId>common-data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-
-
-
 	</dependencies>
-
-	<build>
-		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>com.github.victools</groupId>-->
-<!--				<artifactId>jsonschema-maven-plugin</artifactId>-->
-<!--				<version>4.33.0</version>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<goals>-->
-<!--							<goal>generate</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--				<configuration>-->
-<!--					<classNames>org.gleif.data.schema.leidata._2016.LEIRecordType</classNames>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--			<plugin>-->
-<!--				<groupId>org.codehaus.mojo</groupId>-->
-<!--				<artifactId>jaxb2-maven-plugin</artifactId>-->
-<!--				<version>3.1.0</version>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<id>xjc</id>-->
-<!--						<goals>-->
-<!--							<goal>xjc</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--				<configuration>-->
-<!--					<xjbSources>-->
-<!--						<xjbSource>src/main/xsd/dateclass.xjb</xjbSource>-->
-<!--					</xjbSources>-->
-<!--					<sources>-->
-<!--						<source>src/main/xsd/2021-03-04_lei-cdf-v3-1.xsd</source>-->
-<!--					</sources>-->
-<!--					<outputDirectory>${basedir}/src/main/java</outputDirectory>-->
-<!--					<clearOutputDir>false</clearOutputDir>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--				<configuration>-->
-<!--					<image>-->
-<!--						<builder>paketobuildpacks/builder-jammy-base:latest</builder>-->
-<!--					</image>-->
-<!--					<excludes>-->
-<!--						<exclude>-->
-<!--							<groupId>org.projectlombok</groupId>-->
-<!--							<artifactId>lombok</artifactId>-->
-<!--						</exclude>-->
-<!--					</excludes>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-		</plugins>
-	</build>
 
 </project>

@@ -1,0 +1,5 @@
+create sequence address_seq start with 1 increment by 50;
+create sequence legal_entity_seq start with 1 increment by 50;
+create table address (id bigint not null, legal_entity_id bigint not null, address_number varchar(255), address_number_within_building varchar(255), city varchar(255), country varchar(255), first_address_line varchar(255), mail_routing varchar(255), postal_code varchar(255), region varchar(255), type varchar(255), primary key (id));
+create table legal_entity (id bigint not null, initial_registration_date timestamp(6), last_update_date timestamp(6), next_renewal_date timestamp(6), entity_category varchar(255), entity_legal_form_code varchar(255), entity_status varchar(255), entity_sub_category varchar(255), legal_jurisdiction varchar(255), legal_name varchar(255), lei varchar(255), managinglou varchar(255), other_legal_form varchar(255), registration_authority_entityid varchar(255), registration_authorityid varchar(255), registration_status varchar(255), validation_sources varchar(255), primary key (id));
+alter table if exists address add constraint FK7d4n4nqymbu00cj0r8dsoiwom foreign key (legal_entity_id) references legal_entity;

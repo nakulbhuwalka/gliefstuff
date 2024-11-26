@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.gleif.entity.Address;
-import com.example.gleif.entity.Entity;
+import com.example.gleif.entity.LegalEntity;
 import org.gleif.data.schema.leidata._2016.AddressType;
 import org.gleif.data.schema.leidata._2016.LEIRecordType;
 import org.mapstruct.Mapper;
@@ -31,21 +31,30 @@ public interface EntityMapper {
     @Mapping(target = "nextRenewalDate", source = "registration.nextRenewalDate")
     @Mapping(target = "managingLOU", source = "registration.managingLOU")
     @Mapping(target = "validationSources", source = "registration.validationSources")
-    Entity lEIRecordTypeToEntity(LEIRecordType leiRecordType);
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "addresses", ignore = true)
+    LegalEntity lEIRecordTypeToEntity(LEIRecordType leiRecordType);
 
 
-
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "legalEntity", ignore = true)
     Address addressTypeToAddress(AddressType addressType, String type);
 
-    default Entity map(LEIRecordType leiRecordType)
-    {
-        Entity entity = lEIRecordTypeToEntity(leiRecordType);
-        entity.setAddresses(new ArrayList<>());
+    default LegalEntity map(LEIRecordType leiRecordType, long asOfDate, long asOfTime ) {
+        LegalEntity legalEntity = lEIRecordTypeToEntity(leiRecordType);
+        legalEntity.setAsOfTime(asOfTime);
+        legalEntity.setAsOfDate(asOfDate);
+        legalEntity.setAddresses(new ArrayList<>());
 
-        entity.getAddresses().add(addressTypeToAddress(leiRecordType.getEntity().getLegalAddress(), "legal"));
-        entity.getAddresses().add(addressTypeToAddress(leiRecordType.getEntity().getHeadquartersAddress(),"hq"));
+        legalEntity.getAddresses().add(addressTypeToAddress(leiRecordType.getEntity().getLegalAddress(), "legal"));
+        legalEntity.getAddresses().add(addressTypeToAddress(leiRecordType.getEntity().getHeadquartersAddress(), "hq"));
+        legalEntity.getAddresses().forEach(a -> a.setLegalEntity(legalEntity));
 
-        return entity;
+        return legalEntity;
     }
 
 }
+
+
+
+
