@@ -2,7 +2,9 @@ package com.example.gleif.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Data
 @Entity
 public class Address {
@@ -21,6 +23,9 @@ public class Address {
     private String type;
     @ManyToOne
     @JoinColumn(name="legal_entity_id", nullable=false)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonIgnore
     private LegalEntity legalEntity;
     
 

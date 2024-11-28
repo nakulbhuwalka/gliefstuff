@@ -11,6 +11,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,7 +29,7 @@ public class GleifCache {
         this.cacheManager = cacheManager;
     }
 
-    @PostConstruct
+    @PostConstruct()
     public void postConstruct() throws IOException {
         log.info("Start Loading cache");
         Cache cache = cacheManager.getCache("gleif");
@@ -47,6 +48,8 @@ public class GleifCache {
 
         log.info("Finished Loading cache");
     }
+
+
 
     @Cacheable
     public LEIRecordType get(String lei)

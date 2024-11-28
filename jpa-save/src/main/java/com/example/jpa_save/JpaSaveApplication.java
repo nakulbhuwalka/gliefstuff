@@ -62,9 +62,6 @@ public class JpaSaveApplication implements ApplicationRunner {
         log.info("Read all lines {} in time {}", les.size(), System.currentTimeMillis() - start);
         start = System.currentTimeMillis();
         Iterators.partition(les.iterator(),1000).forEachRemaining(legalEntityRepository::saveAll);
-       // ListUtils l;
-        //legalEntityRepository.saveAllAndFlush(les);
-
         log.info("saved all lines {} in time {}", les.size(), System.currentTimeMillis() - start);
 
 

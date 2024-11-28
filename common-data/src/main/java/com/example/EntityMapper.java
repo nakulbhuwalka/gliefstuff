@@ -15,6 +15,8 @@ public interface EntityMapper {
 
     EntityMapper ENTITY_MAPPER = Mappers.getMapper(EntityMapper.class);
 
+    @Mapping(target = "asOfTime", ignore = true)
+    @Mapping(target = "asOfDate", ignore = true)
     @Mapping(target = "lei", source = "LEI")
     @Mapping(target = "legalName", source = "entity.legalName.value")
     @Mapping(target = "legalJurisdiction", source = "entity.legalJurisdiction")
